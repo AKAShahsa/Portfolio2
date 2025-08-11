@@ -1,0 +1,417 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Utility for Roboto font usage injected by the component */
+.font-roboto {
+  font-family: "Roboto", system-ui, -apple-system, Segoe UI, Roboto,
+    Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
+}
+
+/* Force-hide native cursor when custom cursor is active */
+.custom-cursor-enabled,
+.custom-cursor-enabled * {
+  cursor: none !important;
+}
+nav {
+  opacity: 1 !important;
+  transform: translateY(0px) !important;
+}
+
+
+/* Chatbot animations */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in-up {
+  animation: fadeInUp 0.3s ease-out forwards;
+}
+
+/* Reviews auto-scroll animation */
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-scroll {
+  animation: scroll 40s linear infinite;
+  width: max-content;
+}
+
+/* Live Subscriber Counter Animations */
+@keyframes shimmer {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+@keyframes glow {
+  0%, 100% {
+    box-shadow: 0 0 20px rgba(0, 230, 118, 0.3);
+  }
+  50% {
+    box-shadow: 0 0 40px rgba(0, 230, 118, 0.6), 0 0 60px rgba(0, 230, 118, 0.4);
+  }
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes pulse-ring {
+  0% {
+    transform: scale(0.8);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1.4);
+    opacity: 0;
+  }
+}
+
+@keyframes number-pop {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.animate-shimmer {
+  animation: shimmer 2s ease-in-out;
+}
+
+.animate-glow {
+  animation: glow 3s ease-in-out infinite;
+}
+
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
+
+.animate-pulse-ring {
+  animation: pulse-ring 2s ease-out infinite;
+}
+
+.animate-number-pop {
+  animation: number-pop 0.6s ease-out;
+}
+
+/* Review card hover effect */
+#reviews-track > div {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+#reviews-track > div:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px -5px rgba(0, 230, 118, 0.1);
+}
+
+/* 3D Stack for Graphic Design */
+.perspective-1000 {
+  perspective: 1000px;
+}
+
+.preserve-3d {
+  transform-style: preserve-3d;
+}
+
+/* Smooth transitions for 3D elements */
+.graphic-design-image {
+  transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1), 
+              opacity 0.4s cubic-bezier(0.4, 0, 0.2, 1), 
+              filter 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  transform-style: preserve-3d;
+  will-change: transform, opacity, filter;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+
+/* Better cursor grab effect */
+.cursor-grab {
+  cursor: grab;
+}
+
+.cursor-grab:active {
+  cursor: grabbing;
+}
+
+/* Performance optimizations for 3D transforms */
+.will-change-transform {
+  will-change: transform;
+}
+
+/* Smooth scroll behavior for the entire page */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Hardware acceleration for better performance */
+.gpu-accelerated {
+  transform: translateZ(0);
+  -webkit-transform: translateZ(0);
+}
+
+/* Zoom Modal Styles */
+.zoom-modal {
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+
+.zoom-modal img {
+  image-rendering: -webkit-optimize-contrast;
+  image-rendering: crisp-edges;
+}
+
+/* Prevent text selection during drag */
+.select-none {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+/* Custom scrollbar for zoom modal */
+.zoom-container::-webkit-scrollbar {
+  display: none;
+}
+
+.zoom-container {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* Hover effects for zoom buttons */
+.zoom-btn {
+  transition: all 0.2s ease;
+}
+
+.zoom-btn:hover {
+  transform: scale(1.05);
+}
+
+.zoom-btn:active {
+  transform: scale(0.95);
+}
+
+/* Smooth backdrop animations */
+.modal-backdrop {
+  animation: fadeIn 0.3s ease-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Image zoom transition */
+.zoom-image {
+  transition: transform 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Mobile touch improvements */
+@media (max-width: 768px) {
+  .zoom-modal .p-4 {
+    padding: 1rem;
+  }
+  
+  .zoom-modal h3 {
+    font-size: 1.125rem;
+  }
+  
+  .zoom-modal p {
+    font-size: 0.875rem;
+  }
+}
+
+/* Hero section background enhancement */
+#home {
+  background: radial-gradient(ellipse at center, rgba(0, 230, 118, 0.03) 0%, transparent 70%);
+}
+
+/* Certificates Section Styling */
+.certificate-card {
+  transform-style: preserve-3d;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+}
+
+.certificate-stack {
+  perspective: 1000px;
+  transform-style: preserve-3d;
+}
+
+/* Certificate 3D glow and shadow effects */
+.certificate-glow {
+  box-shadow: 
+    0 20px 40px rgba(0, 230, 118, 0.15),
+    0 8px 16px rgba(0, 0, 0, 0.2),
+    0 2px 8px rgba(0, 0, 0, 0.1),
+    inset 0 1px 0 rgba(255, 255, 255, 0.1),
+    inset 0 -1px 0 rgba(0, 0, 0, 0.1);
+}
+
+/* Smooth certificate transitions */
+.duration-600 {
+  transition-duration: 600ms;
+}
+
+/* Certificate hover effects */
+.certificate-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 
+    0 25px 50px rgba(0, 230, 118, 0.2),
+    0 10px 20px rgba(0, 0, 0, 0.3);
+}
+
+/* Certificate indicator animations */
+@keyframes certificateGlow {
+  0%, 100% {
+    box-shadow: 0 0 5px rgba(0, 230, 118, 0.5);
+  }
+  50% {
+    box-shadow: 0 0 15px rgba(0, 230, 118, 0.8);
+  }
+}
+
+.certificate-indicator.active {
+  animation: certificateGlow 2s ease-in-out infinite;
+}
+
+/* Mobile optimizations for certificates */
+@media (max-width: 768px) {
+  .certificate-stack {
+    perspective: 800px;
+  }
+  
+  .certificate-card {
+    transform-origin: center center;
+  }
+}
+
+/* Swiper Navigation Button Overrides */
+.swiper-button-next,
+.swiper-button-prev {
+  width: auto !important;
+  height: auto !important;
+  margin-top: 0 !important;
+  color: #00E676 !important;
+  background: rgba(4, 24, 39, 0.8) !important;
+  border: 1px solid #063042 !important;
+  border-radius: 50% !important;
+  padding: 12px !important;
+  backdrop-filter: blur(4px) !important;
+  transition: all 0.3s ease !important;
+  z-index: 10 !important;
+}
+
+.swiper-button-next:hover,
+.swiper-button-prev:hover {
+  background: #063042 !important;
+}
+
+.swiper-button-next:after,
+.swiper-button-prev:after {
+  font-size: 16px !important;
+  font-weight: bold !important;
+}
+
+.swiper-button-disabled {
+  opacity: 0.5 !important;
+}
+
+/* Responsive padding for hero section */
+@media (max-width: 640px) {
+  .py-28 {
+    padding-top: 2rem !important;
+    padding-bottom: 2rem !important;
+  }
+}
+
+/* Enhanced Skills Section Animations */
+@keyframes shimmer {
+  0% { transform: translateX(-100%) skewX(-12deg); }
+  100% { transform: translateX(200%) skewX(-12deg); }
+}
+
+@keyframes spin-slow {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.animate-shimmer {
+  animation: shimmer 2s infinite;
+}
+
+.animate-spin-slow {
+  animation: spin-slow 3s linear infinite;
+}
+
+/* Skills card stagger animation */
+.skill-card {
+  animation: slideInUp 0.6s ease-out forwards;
+  opacity: 0;
+  transform: translateY(30px);
+}
+
+@keyframes slideInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Epic Hero Section Animations */
+@keyframes gradient-x {
+  0%, 100% {
+    background-size: 200% 200%;
+    background-position: left center;
+  }
+  50% {
+    background-size: 200% 200%;
+    background-position: right center;
+  }
+}
+
+@keyframes scale-x {
+  0% { transform: scaleX(0); }
+  100% { transform: scaleX(1); }
+}
+
+.animate-gradient-x {
+  animation: gradient-x 3s ease infinite;
+  background-size: 200% 200%;
+}
+
+.animate-scale-x {
+  animation: scale-x 1s ease-out forwards;
+  animation-delay: 2s;
+}
